@@ -11,6 +11,7 @@ TOKEN = os.getenv("TOKEN")
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 SHEET_ENDPOINT = os.getenv("SHEET_ENDPOINT")
+SHEETY_AUTH = os.getenv("SHEETY_AUTH")
 
 # ----------- Nutritionix API Request -----------
 exercise_url = "https://trackapi.nutritionix.com/v2/natural/exercise"
@@ -39,11 +40,11 @@ print("📝 Nutritionix response:")
 print(exercise_data)
 
 # ----------- Sheety Setup -----------
-SHEETY_URL = "https://api.sheety.co/1a698ab24274a3dcd5fec165c4692a5b/copyOfMyWorkouts/workouts" # Replace with your actual URL
+SHEETY_URL = "https://api.sheety.co/1a698ab24274a3dcd5fec165c4692a5b/copyOfMyWorkouts/workouts"
 
 # Optional: Sheety Basic Auth
 SHEETY_HEADERS = {
-    "Authorization": "Basic YnJhZGVuOkZhbHhvbloyKio="  # Only if your Sheety project is private
+    "Authorization": f"Basic {SHEETY_AUTH}"
 }
 
 # ----------- Post each exercise to Sheety -----------
