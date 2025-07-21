@@ -1,14 +1,16 @@
 import requests
 import os
 import datetime as dt
+from dotenv import load_dotenv
 
+load_dotenv()
 # ----------- Nutritionix API Credentials -----------
-APP_ID = os.environ['APP_ID']
-API_KEY = os.environ.get("API_KEY")
-TOKEN = os.environ.get("TOKEN")
-USERNAME = os.environ.get("USERNAME")
-PASSWORD = os.environ["PASSWORD"]
-SHEET_ENDPOINT = os.environ.get("SHEET_ENDPOINT")
+APP_ID = os.getenv('APP_ID')
+API_KEY = os.getenv("API_KEY")
+TOKEN = os.getenv("TOKEN")
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+SHEET_ENDPOINT = os.getenv("SHEET_ENDPOINT")
 
 # ----------- Nutritionix API Request -----------
 exercise_url = "https://trackapi.nutritionix.com/v2/natural/exercise"
